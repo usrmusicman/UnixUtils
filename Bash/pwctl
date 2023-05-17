@@ -1,0 +1,26 @@
+#!/bin/sh
+
+## Maintainer Alexander Mcmillan <linuxguy93@gmail.com>
+
+## Variables
+SAMPLERATE=$1
+BUFFERSIZE=$2
+
+## Commandline Program
+settings() {
+## Set Samplerate And Buffersize
+pw-metadata -n settings 0 clock.force-rate ${SAMPLERATE}
+pw-metadata -n settings 0 clock.force-quantum ${BUFFERSIZE}
+}
+
+sample_rate() {
+SAMPLERATE=`zenity --list --radiolist --text "Please Choose A Samplerate:" --hide-header --column "Samplerate" --column "Value" FALSE "44100" FALSE "48000" FALSE "88200" FALSE "96000" FALSE "176400" FALSE "192000" --height "300"`
+}
+
+buffer_size() {
+BUFFERSIZE=`zenity --list --radiolist --text "Please Choose A Buffersize:" --hide-header --column "Samplerate" --column "Value" FALSE "16" FALSE "32" FALSE "64" FALSE "128" FALSE "256" FALSE "512" FALSE "1024" FALSE "2048" FALSE "4096" --height "350"`
+}
+
+sample_rate
+buffer_size
+settings
