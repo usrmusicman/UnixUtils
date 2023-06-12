@@ -14,11 +14,11 @@ pw-metadata -n settings 0 clock.force-quantum ${BUFFERSIZE}
 }
 
 sample_rate() {
-SAMPLERATE=`zenity --list --radiolist --text "Please Choose A Samplerate:" --hide-header --column "Samplerate" --column "Value" FALSE "44100" FALSE "48000" FALSE "88200" FALSE "96000" FALSE "176400" FALSE "192000" --height "300"`
+SAMPLERATE=`zenity --list --radiolist --text "Please Choose A Samplerate:" --hide-header --column "Samplerate" --column "Value" FALSE "44100" FALSE "48000" FALSE "88200" FALSE "96000" FALSE "192000" --height "300"`
 }
 
 buffer_size() {
-BUFFERSIZE=`zenity --list --radiolist --text "Please Choose A Buffersize:" --hide-header --column "Samplerate" --column "Value" FALSE "16" FALSE "32" FALSE "64" FALSE "128" FALSE "256" FALSE "512" FALSE "1024" FALSE "2048" FALSE "4096" --height "350"`
+BUFFERSIZE=`zenity --list --radiolist --text "Please Choose A Buffersize:" --hide-header --column "Samplerate" --column "Value" FALSE "0" FALSE "16" FALSE "32" FALSE "48" FALSE "64" FALSE "96" FALSE "128" FALSE "192" FALSE "256" FALSE "384" FALSE "512" FALSE "768" FALSE "1024" FALSE "2048" FALSE "4096" --height "480"`
 }
 
 sample_rate
